@@ -1,0 +1,11 @@
+tg\univlome\epl\dad\boutique\entite\ProduitAchete.class
+tg\univlome\epl\dad\boutique\entite\Personne.class
+tg\univlome\epl\dad\boutique\entite\Employe.class
+tg\univlome\epl\dad\boutique\entite\Achat.class
+tg\univlome\epl\dad\boutique\service\EmployeService.class
+tg\univlome\epl\dad\boutique\service\GenericService.class
+tg\univlome\epl\dad\boutique\Boutique.class
+tg\univlome\epl\dad\boutique\entite\Categorie.class
+tg\univlome\epl\dad\boutique\entite\Produit.class
+tg\univlome\epl\dad\boutique\service\AchatService.class
+tg\univlome\epl\dad\boutique\entite\Client.class
