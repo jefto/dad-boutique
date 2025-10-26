@@ -104,7 +104,17 @@ public class Achat {
         return this.id == other.id;
     }
     
+    public double getRemiseTotale(){
+        double remiseTotal = 0;
+        
+        return remiseTotal;
+    }
     
-    
+    public double getTotalAPayer(){
+        double totalAPayer = 0;
+        
+        
+        return totalAPayer;
+    }
     
 }

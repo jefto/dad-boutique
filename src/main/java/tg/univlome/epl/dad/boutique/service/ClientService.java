@@ -12,6 +12,17 @@ import tg.univlome.epl.dad.boutique.entite.Client;
  */
 public class ClientService extends GenericService <Client>{
     
+    private static ClientService instance;
+
+    private ClientService() { }
+
+    public static ClientService getInstance() {
+        if (instance == null) {
+            instance = new ClientService();
+        }
+        return instance;
+    }
+    
      @Override
     public void modifier(Client objet) {
         long newId = objet.getId();

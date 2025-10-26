@@ -10,22 +10,15 @@ import tg.univlome.epl.dad.boutique.entite.ProduitAchete;
  */
 public class ProduitAcheteService extends GenericService <ProduitAchete>{
     
-    @Override
-    public void modifier(ProduitAchete objet) {
-        long newId = objet.getId();
+    private static ProduitAcheteService instance;
 
-        for (int i = 0; i < elements.size(); i++) {
-            ProduitAchete t = elements.get(i);
-            long oldId = t.getId(); // ID de l'élément EXISTANT dans la liste
+    private ProduitAcheteService() { }
 
-            if (newId == oldId) {
-                elements.set(i, objet);
-                System.out.println("Mise à jour réussie");
-                return; // Important : sortir de la méthode après la mise à jour
-            }
+    public static ProduitAcheteService getInstance() {
+        if (instance == null) {
+            instance = new ProduitAcheteService();
         }
-        // Ce message s'affiche seulement si aucun élément n'a été trouvé
-        System.out.println("Objet non trouvé !");
+        return instance;
     }
-
+    
 }

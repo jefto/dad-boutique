@@ -12,6 +12,18 @@ import tg.univlome.epl.dad.boutique.entite.Achat;
  */
 public class AchatService extends GenericService<Achat>{
     
+    private static AchatService instance;
+
+    private AchatService() { }
+
+    public static AchatService getInstance() {
+        if (instance == null) {
+            instance = new AchatService();
+        }
+        return instance;
+    }
+    
+    
     @Override
     public void modifier(Achat objet) {
         long newId = objet.getId();

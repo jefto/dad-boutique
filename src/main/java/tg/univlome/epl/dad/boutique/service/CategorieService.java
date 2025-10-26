@@ -10,6 +10,17 @@ import tg.univlome.epl.dad.boutique.entite.Categorie;
  */
 public class CategorieService extends GenericService <Categorie> {
     
+    private static CategorieService instance;
+
+    private CategorieService() { }
+
+    public static CategorieService getInstance() {
+        if (instance == null) {
+            instance = new CategorieService();
+        }
+        return instance;
+    }
+    
     @Override
     public void modifier(Categorie objet) {
         Integer newId = objet.getId();

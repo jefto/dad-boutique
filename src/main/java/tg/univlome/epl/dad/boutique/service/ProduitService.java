@@ -11,6 +11,17 @@ import tg.univlome.epl.dad.boutique.entite.Produit;
  */
 public class ProduitService extends GenericService <Produit>{
     
+    private static ProduitService instance;
+
+    private ProduitService() { }
+
+    public static ProduitService getInstance() {
+        if (instance == null) {
+            instance = new ProduitService();
+        }
+        return instance;
+    }
+    
     @Override
     public void modifier(Produit objet) {
         long newId = objet.getId();

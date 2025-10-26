@@ -11,6 +11,19 @@ import tg.univlome.epl.dad.boutique.entite.Employe;
  * @author manus
  */
 public class EmployeService extends GenericService <Employe>{
+    
+    private static EmployeService instance;
+
+    private EmployeService() { }
+
+    public static EmployeService getInstance() {
+        if (instance == null) {
+            instance = new EmployeService();
+        }
+        return instance;
+    }
+    
+    
     @Override
     public void modifier(Employe objet) {
         long newId = objet.getId();

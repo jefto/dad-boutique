@@ -4,6 +4,7 @@
  */
 package tg.univlome.epl.dad.boutique.entite;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -14,14 +15,14 @@ public class Produit {
     private long id;
     private String libelle;
     private double prixUnitaire;
-    private Date datePeremption;
+    private LocalDate datePeremption;
     private Categorie categorie;
     
     public Produit(){
         
     }
 
-    public Produit(long id, String libelle, double prixUnitaire, Date datePeremption, Categorie categorie) {
+    public Produit(long id, String libelle, double prixUnitaire, LocalDate datePeremption, Categorie categorie) {
         this.id = id;
         this.libelle = libelle;
         this.prixUnitaire = prixUnitaire;
@@ -53,11 +54,11 @@ public class Produit {
         this.prixUnitaire = prixUnitaire;
     }
 
-    public Date getDatePeremption() {
+    public LocalDate getDatePeremption() {
         return datePeremption;
     }
 
-    public void setDatePeremption(Date datePeremption) {
+    public void setDatePeremption(LocalDate datePeremption) {
         this.datePeremption = datePeremption;
     }
 
@@ -90,10 +91,30 @@ public class Produit {
         final Produit other = (Produit) obj;
         return this.id == other.id;
     }
+
+
+    public Boolean estPerime() {
+        if (datePeremption.isBefore(LocalDate.now()) || datePeremption.isEqual(LocalDate.now())) {
+            System.out.println("Votre produit est périmé");
+            return true;
+        } else {
+            System.out.println("Votre produit n'est pas périmé");
+            return false;
+        }
+    }
     
+    public Boolean estPerime (LocalDate dateReference){
+        if (datePeremption.isBefore(dateReference) || datePeremption.isEqual(dateReference)) {
+            System.out.println("Votre produit est périmé");
+            return true;
+        } else {
+            System.out.println("Votre produit n'est pas périmé");
+            return false;
+        }
+    }
     
-    
-    
-    
-    
+
+
+
+
 }

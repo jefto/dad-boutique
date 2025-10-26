@@ -19,7 +19,7 @@ public class Boutique {
         Employe employe = new Employe(1,"A4", "Beatrix", LocalDate.now());
         Employe employe2 = new Employe(1,"A5", "Bea", LocalDate.now());
         
-        EmployeService service = new EmployeService();
+        EmployeService service =  EmployeService.getInstance();
         service.ajouter(employe);
         service.modifier(employe2);
         

@@ -12,6 +12,17 @@ import tg.univlome.epl.dad.boutique.entite.Personne;
  */
 public class PersonneService extends GenericService <Personne>{
     
+    private static PersonneService instance;
+
+    private PersonneService() { }
+
+    public static PersonneService getInstance() {
+        if (instance == null) {
+            instance = new PersonneService();
+        }
+        return instance;
+    }
+    
     @Override
     public void modifier(Personne objet) {
         long newId = objet.getId();
