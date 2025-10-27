@@ -12,15 +12,16 @@ import java.util.List;
  * @author manus
  */
 public class Achat {
+
     private long id;
     private Date dateAchat;
     private double remise;
     private Employe employe;
     private Client client;
     private List<ProduitAchete> produitAchete;
-    
-    public Achat (){
-    
+
+    public Achat() {
+
     }
 
     public Achat(long id, Date dateAchat, double remise, Employe employe, Client client) {
@@ -29,7 +30,7 @@ public class Achat {
         this.remise = remise;
         this.employe = employe;
         this.client = client;
-        
+
     }
 
     public long getId() {
@@ -79,8 +80,6 @@ public class Achat {
     public void setProduitAchete(List<ProduitAchete> produitAchete) {
         this.produitAchete = produitAchete;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -103,18 +102,30 @@ public class Achat {
         final Achat other = (Achat) obj;
         return this.id == other.id;
     }
-    
-    public double getRemiseTotale(){
+
+    public double getRemiseTotale() {
         double remiseTotal = 0;
+        remiseTotal = remiseTotal + remise;
         
+        for (ProduitAchete produitAchete1 : produitAchete) {
+            remiseTotal = remiseTotal + produitAchete1.getRemise();
+
+        }
+
         return remiseTotal;
     }
-    
-    public double getTotalAPayer(){
-        double totalAPayer = 0;
+
+    public double getTotalAPayer() {
+        double totalAPayer;
+        double totalPrix = 0;
         
+        for(ProduitAchete prixProduitAchete1 : produitAchete){
+           totalPrix = totalPrix + prixProduitAchete1.getProduit().getPrixUnitaire();
+        }
+           
+        totalAPayer = totalPrix -  getRemiseTotale();
         
         return totalAPayer;
     }
-    
+
 }
