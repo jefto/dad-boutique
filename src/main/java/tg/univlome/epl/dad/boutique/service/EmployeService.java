@@ -10,7 +10,7 @@ import tg.univlome.epl.dad.boutique.entite.Employe;
  *
  * @author manus
  */
-public class EmployeService extends GenericService <Employe>{
+public class EmployeService extends GenericService <Employe, Long>{
     
     private static EmployeService instance;
 
@@ -30,15 +30,44 @@ public class EmployeService extends GenericService <Employe>{
 
         for (int i = 0; i < elements.size(); i++) {
             Employe t = elements.get(i);
-            long oldId = t.getId(); // ID de l'élément EXISTANT dans la liste
+            long oldId = t.getId(); 
 
             if (newId == oldId) {
                 elements.set(i, objet);
                 System.out.println("Mise à jour réussie");
-                return; // Important : sortir de la méthode après la mise à jour
+                return; 
             }
         }
-        // Ce message s'affiche seulement si aucun élément n'a été trouvé
+        
         System.out.println("Objet non trouvé !");
+    }
+    
+    @Override
+    public void supprimer (Long id){
+        
+        for(int i = 0; i < elements.size(); i++){
+            
+            Employe t = elements.get(i);
+            Long listId = t.getId();
+            if(listId == id){
+                elements.remove(t);
+                System.out.println("Elément suprimé avec succès");
+            }
+            
+        }
+        
+    }
+    
+    @Override
+    public Employe trouver(Long id){
+        for(int i = 0; i < elements.size(); i++){
+            
+            Employe t = elements.get(i);
+            Long listId = t.getId();
+            if(listId == id){
+                return t;
+            }
+        }
+        return null;
     }
 }

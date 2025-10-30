@@ -18,15 +18,27 @@ public class Boutique {
         
         Employe employe = new Employe(1,"A4", "Beatrix", LocalDate.now());
         Employe employe2 = new Employe(1,"A5", "Bea", LocalDate.now());
+        Employe employe3 = new Employe(2,"A4", "Alice", LocalDate.now());
         
         EmployeService service =  EmployeService.getInstance();
         service.ajouter(employe);
+        service.ajouter(employe3);
+        
+        for (Employe arg : service.lister()) {
+            System.out.println(arg);
+        }
+        
+        System.out.println("Nombre d'éléments dans la liste : " + service.compter());
+        
+        System.out.println("Eléments trouvé : " + service.trouver(2L));
+        
+        
+        service.supprimer(2L);
         service.modifier(employe2);
         
         for (Employe arg : service.lister()) {
             System.out.println(arg);
         }
         
-        //System.out.println(service.lister());
     }
 }

@@ -7,5 +7,10 @@ D:\EPL\Semestre 5\DAD\TP\semaine-1-boutique\boutique\src\main\java\tg\univlome\e
 D:\EPL\Semestre 5\DAD\TP\semaine-1-boutique\boutique\src\main\java\tg\univlome\epl\dad\boutique\entite\Produit.java
 D:\EPL\Semestre 5\DAD\TP\semaine-1-boutique\boutique\src\main\java\tg\univlome\epl\dad\boutique\entite\ProduitAchete.java
 D:\EPL\Semestre 5\DAD\TP\semaine-1-boutique\boutique\src\main\java\tg\univlome\epl\dad\boutique\service\AchatService.java
+D:\EPL\Semestre 5\DAD\TP\semaine-1-boutique\boutique\src\main\java\tg\univlome\epl\dad\boutique\service\CategorieService.java
+D:\EPL\Semestre 5\DAD\TP\semaine-1-boutique\boutique\src\main\java\tg\univlome\epl\dad\boutique\service\ClientService.java
 D:\EPL\Semestre 5\DAD\TP\semaine-1-boutique\boutique\src\main\java\tg\univlome\epl\dad\boutique\service\EmployeService.java
 D:\EPL\Semestre 5\DAD\TP\semaine-1-boutique\boutique\src\main\java\tg\univlome\epl\dad\boutique\service\GenericService.java
+D:\EPL\Semestre 5\DAD\TP\semaine-1-boutique\boutique\src\main\java\tg\univlome\epl\dad\boutique\service\PersonneService.java
+D:\EPL\Semestre 5\DAD\TP\semaine-1-boutique\boutique\src\main\java\tg\univlome\epl\dad\boutique\service\ProduitAcheteService.java
+D:\EPL\Semestre 5\DAD\TP\semaine-1-boutique\boutique\src\main\java\tg\univlome\epl\dad\boutique\service\ProduitService.java

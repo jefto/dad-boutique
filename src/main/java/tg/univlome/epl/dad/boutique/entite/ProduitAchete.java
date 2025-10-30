@@ -9,6 +9,7 @@ package tg.univlome.epl.dad.boutique.entite;
  * @author manus
  */
 public class ProduitAchete {
+    private long id;
     private double remise;
     private Produit produit;
     private Achat achat;
@@ -17,12 +18,22 @@ public class ProduitAchete {
         
     }
 
-    public ProduitAchete(double remise, Produit produit, Achat achat) {
+    public ProduitAchete(long id, double remise, Produit produit, Achat achat) {
+        this.id = id;
         this.remise = remise;
         this.produit = produit;
         this.achat = achat;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    
     public double getRemise() {
         return remise;
     }
@@ -45,6 +56,28 @@ public class ProduitAchete {
 
     public void setAchat(Achat achat) {
         this.achat = achat;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 23 * hash + (int) (this.id ^ (this.id >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final ProduitAchete other = (ProduitAchete) obj;
+        return this.id == other.id;
     }
     
     

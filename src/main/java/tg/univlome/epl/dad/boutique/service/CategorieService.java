@@ -8,7 +8,7 @@ import tg.univlome.epl.dad.boutique.entite.Categorie;
  *
  * @author manus
  */
-public class CategorieService extends GenericService <Categorie> {
+public class CategorieService extends GenericService <Categorie, Integer> {
     
     private static CategorieService instance;
 
@@ -27,15 +27,44 @@ public class CategorieService extends GenericService <Categorie> {
 
         for (int i = 0; i < elements.size(); i++) {
             Categorie t = elements.get(i);
-            Integer oldId = t.getId(); // ID de l'élément EXISTANT dans la liste
+            Integer oldId = t.getId(); 
 
             if (newId == oldId) {
                 elements.set(i, objet);
                 System.out.println("Mise à jour réussie");
-                return; // Important : sortir de la méthode après la mise à jour
+                return; 
             }
         }
-        // Ce message s'affiche seulement si aucun élément n'a été trouvé
+        
         System.out.println("Objet non trouvé !");
+    }
+
+    @Override
+    public void supprimer (Integer id){
+        
+        for(int i = 0; i < elements.size(); i++){
+            
+            Categorie t = elements.get(i);
+            Integer listId = t.getId();
+            if(listId == id){
+                elements.remove(t);
+                System.out.println("Elément suprimé avec succès");
+            }
+            
+        }
+        
+    }
+    
+    @Override
+    public Categorie trouver(Integer id){
+        for(int i = 0; i < elements.size(); i++){
+            
+            Categorie t = elements.get(i);
+            Integer listId = t.getId();
+            if(listId == id){
+                return t;
+            }
+        }
+        return null;
     }
 }
